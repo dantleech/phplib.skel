@@ -7,7 +7,7 @@
         "project.description": "Description about my project",
         "author.name": "Anonymous",
         "author.email": "anonymous@example.com",
-        "package.name": "my-package"
+        "package.name": "my-vendor/my-package"
     },
     "basedir": "skeletor",
     "files": {
@@ -18,6 +18,8 @@
             "type": "dir"
         },
         "LICENSE": {},
+        "README.md": {},
+        ".styleci.yml": {},
         ".travis.yml": {},
         ".gitignore": {},
         "phpunit.xml.dist": {},

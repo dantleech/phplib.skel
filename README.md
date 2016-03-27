@@ -9,5 +9,6 @@ Features pre-built configuration for:
 - PHPUnit.
 - Travis.
 - GIT (.gitignore).
+- Style CI
 
 And comes with an MIT license file.
