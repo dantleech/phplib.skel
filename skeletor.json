@@ -11,7 +11,7 @@
     },
     "basedir": "skeletor",
     "files": {
-        "lib": {
+        "src": {
             "type": "dir"
         },
         "tests": { 
@@ -19,10 +19,22 @@
         },
         "LICENSE": {},
         "README.md": {},
-        ".styleci.yml": {},
+        "phpstan.neon": {},
         ".travis.yml": {},
+        ".php_cs.dist": {},
         ".gitignore": {},
         "phpunit.xml.dist": {},
         "composer.json": {}
-    }
+    },
+    "post_install": [
+        "git init",
+        "composer validate",
+        "composer require --dev phpstan/phpstan phpunit/phpunit friendsofphp/php-cs-fixer --no-update",
+        "git add -A",
+        "git commit -m \"initial\"",
+        "composer install",
+        "./vendor/bin/phpunit",
+        "./vendor/bin/php-cs-fixer fix --dry-run",
+        "./vendor/bin/phpstan analyse --level=7"
+    ]
 }
